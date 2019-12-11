@@ -7,7 +7,7 @@ var CZ_CONFIG_EXAMPLE_LOCATION =
   'node_modules/git-commit-norm/cz-config-example.js';
 var findConfig = require('find-config');
 var log = require('winston');
-var editor = require('editor');
+var editor = {};
 var temp = require('temp').track();
 var fs = require('fs');
 var path = require('path');
