@@ -1,6 +1,6 @@
-# cz-custom-enhanced
+# git-commit-norm
 
-cz-custom-enhanced是在[customizable Commitizen](https://github.com/leonardoanalista/cz-customizable)plugin的基础上进行的二次开发，进一步提高了自定义的粒度
+git-commit-norm是在[customizable Commitizen](https://github.com/leonardoanalista/cz-customizable)plugin的基础上进行的二次开发，进一步提高了自定义的粒度
 插件的宗旨是将团队的commit信息格式按照[AngularJS team](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines)的风格进行规范化，且提供可视化操作界面。
 与此同时，插件的最大亮点是可以自由定义各种不同类型的commit的提交规范，能给予团队在AngularJS team风格的基础上充分制定内部commit规范的空间。
 
@@ -10,24 +10,24 @@ cz-custom-enhanced是在[customizable Commitizen](https://github.com/leonardoana
 
 ## Steps
 * 首选需要安装commitizen插件: `npm install -g commitizen`.
-* 然后再安装: `npm install cz-custom-enhanced --save-dev`
-* 最后通过配置让 `commitizen` 使用 `cz-custom-enhanced` 作为插件。 你需要在`package.json`中加入如下几行代码:
+* 然后再安装: `npm install git-commit-norm --save-dev`
+* 最后通过配置让 `commitizen` 使用 `git-commit-norm` 作为插件。 你需要在`package.json`中加入如下几行代码:
 
   ```
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-custom-enhanced"
+      "path": "node_modules/git-commit-norm"
     }
   }
   ```
 
 ## Configure
-* `cz-custom-enhanced` 默认将会取寻找配置文件 `.cz-config.js`
+* `git-commit-norm` 默认将会取寻找配置文件 `.cz-config.js`
 * 你也可以在 `package.json` 中配置你的配置文件和commitizen的路径:
   ```
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-custome-enhanced"
+      "path": "node_modules/git-commit-norm"
     },
     "cz-customizable": {
       "config": "config/path/to/my/config.js"
@@ -36,7 +36,7 @@ cz-custom-enhanced是在[customizable Commitizen](https://github.com/leonardoana
   ```
 Note:
 - 配置 `commitizen` 的路径可以让你无需全局安装 `commitizen`.
-- 如果不想自己写配置， 可以直接使用 `cz-config-EXAMPLE.js` 作为你的的配置文件
+- 如果不想自己写配置， 可以直接使用 `cz-config-example.js` 作为你的的配置文件
 
 
 ## Options
