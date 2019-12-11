@@ -23,19 +23,7 @@ git-commit-norm是在[customizable Commitizen](https://github.com/leonardoanalis
 
 ## Configure
 * `git-commit-norm` 默认将会取寻找配置文件 `.cz-config.js`
-* 你也可以在 `package.json` 中配置你的配置文件和commitizen的路径:
-  ```
-  "config": {
-    "commitizen": {
-      "path": "node_modules/git-commit-norm"
-    },
-    "cz-customizable": {
-      "config": "config/path/to/my/config.js"
-    }
-  }
-  ```
-Note:
-- 配置 `commitizen` 的路径可以让你无需全局安装 `commitizen`.
+
 - 如果不想自己写配置， 可以直接使用 `cz-config-example.js` 作为你的的配置文件
 
 
@@ -44,10 +32,11 @@ Note:
 `.cz-config.js`:
 - entry: 入口参数，规定commit的类型并且可通过设置各种属性对不同类型commit的提交格式进行定制化
 ``` javascript
-entry: {
-  Fix: { // commit类型
-    value: 'Fix',
-    name: 'Fix:    修复Bug', // 标题
+module.exports = {
+  entry: {
+  fix: { // commit类型
+    value: 'fix',
+    name: 'fix:    修复Bug', // 标题
     scope: { // 副标题
       custom: true, // 是否
       message: '描述解决了什么问题，如果有Bug号的时候，带上Bug号'
@@ -64,15 +53,11 @@ entry: {
       prefix: '影响范围: ',
       message: '描述代码影响范围（可选）'
     }
+  },
+  messages: { // 定义更项信息
+    type: '请选择本次commit的类型:',
+    confirmCommit: '您确认要提交以上的commit吗?'
   }
-```
-
-- messages: 定义更项信息
-
-``` javascript
-messages: {
-  type: '请选择本次commit的类型:',
-  confirmCommit: '您确认要提交以上的commit吗?'
 }
 ```
 
